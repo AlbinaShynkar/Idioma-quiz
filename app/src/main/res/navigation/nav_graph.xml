@@ -14,6 +14,9 @@
         <action
             android:id="@+id/action_FirstFragment_to_SecondFragment"
             app:destination="@id/SecondFragment" />
+        <action
+            android:id="@+id/action_FirstFragment_to_quizQuestionActivity"
+            app:destination="@id/quizQuestionActivity" />
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
@@ -25,4 +28,9 @@
             android:id="@+id/action_SecondFragment_to_FirstFragment"
             app:destination="@id/FirstFragment" />
     </fragment>
+    <activity
+        android:id="@+id/quizQuestionActivity"
+        android:name="com.example.idioma_quiz.QuizQuestionActivity"
+        android:label="activity_quiz_question"
+        tools:layout="@layout/activity_quiz_question" />
 </navigation>
