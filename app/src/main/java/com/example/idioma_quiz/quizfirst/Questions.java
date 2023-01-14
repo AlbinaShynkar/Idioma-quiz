@@ -1,4 +1,4 @@
-package com.example.idioma_quiz;
+package com.example.idioma_quiz.quizfirst;
 
 import org.jetbrains.annotations.NotNull;
 

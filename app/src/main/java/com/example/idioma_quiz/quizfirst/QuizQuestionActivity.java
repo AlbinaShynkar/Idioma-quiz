@@ -1,4 +1,4 @@
-package com.example.idioma_quiz;
+package com.example.idioma_quiz.quizfirst;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
@@ -13,7 +13,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import com.example.idioma_quiz.R;
 
 import java.util.ArrayList;
 
@@ -47,10 +48,6 @@ public class QuizQuestionActivity extends AppCompatActivity implements View.OnCl
         tv_option_two.setOnClickListener(this);
         tv_option_three.setOnClickListener(this);
         btn_submit.setOnClickListener(this);
-
-
-
-
     }
 
     private void setQuestions(){
@@ -78,22 +75,15 @@ public class QuizQuestionActivity extends AppCompatActivity implements View.OnCl
 
         ImageView iv_image = findViewById(R.id.iv_image);
 
-
         progressBar.setProgress(mCurrentPosition);
 
-
         tv_progress.setText(new StringBuilder().append(mCurrentPosition).append("/").append(progressBar.getMax()).toString());
-
 
         iv_image.setImageResource(question.getImage());
 
         tv_option_one.setText(question.getOptionOne());
         tv_option_two.setText(question.getOptionTwo());
         tv_option_three.setText(question.getOptionThree());
-
-
-
-
 
     }
 
@@ -113,10 +103,7 @@ public class QuizQuestionActivity extends AppCompatActivity implements View.OnCl
             i.setTextColor(Color.parseColor("#7A8089"));
             i.setTypeface(Typeface.DEFAULT);
             i.setBackground(ContextCompat.getDrawable(this,R.drawable.default_option_border_bg));
-
         }
-
-
     }
 
     @SuppressLint("NonConstantResourceId")
@@ -127,7 +114,6 @@ public class QuizQuestionActivity extends AppCompatActivity implements View.OnCl
         TextView tv_option_two = findViewById(R.id.tv_option_two);
         TextView tv_option_three = findViewById(R.id.tv_option_three);
         Button btn_submit = findViewById(R.id.btn_submit);
-
 
         switch(view.getId()){
 
@@ -151,11 +137,9 @@ public class QuizQuestionActivity extends AppCompatActivity implements View.OnCl
                          intent.putExtra(Constant.CORRECT_ANSWERS, mCorrectAnswers);
                          intent.putExtra(Constant.TOTAL_QUESTIONS,mQuestionList.size());
                          startActivity(intent);
-
                      }
 
                 }else {
-
                     Questions question =  mQuestionList.get(mCurrentPosition -  1);
                     if(question.getCorrectAnswer() != mSelectedOptionPosition){
                         answerView(mSelectedOptionPosition, R.drawable.wrong_option_border_bg);
@@ -176,13 +160,7 @@ public class QuizQuestionActivity extends AppCompatActivity implements View.OnCl
                     mSelectedOptionPosition = 0;
                 }
 
-
-
-
-
-
         }
-
     }
 
     private void answerView(int answer, int drawableView){

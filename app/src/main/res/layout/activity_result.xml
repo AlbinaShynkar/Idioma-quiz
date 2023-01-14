@@ -7,8 +7,21 @@
     android:background="@color/purple_200"
     android:orientation="vertical"
     android:gravity="center_horizontal"
-    android:padding="20dp"
-    tools:context = ".ResultActivity">
+    tools:context = ".quizfirst.ResultActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/Theme.Idiomaquiz.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/Theme.Idiomaquiz.PopupOverlay" />
+
+    </com.google.android.material.appbar.AppBarLayout>
 
     <TextView
         android:id="@+id/tv_result"
@@ -46,18 +59,24 @@
 
     <Button
         android:id="@+id/btn_finish"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="FINISH"
         android:textSize="18sp"
         android:textStyle="bold"/>
 
-
-
-
-
-
-
-
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/action_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:layout_marginLeft="160dp"
+        android:backgroundTint="@android:color/white"
+        app:borderWidth="0dp"
+        android:contentDescription="Action home"
+        app:maxImageSize="32dp"
+        app:srcCompat="@drawable/ic_baseline_home"
+        app:tint="#8E52C8"
+        tools:ignore="VectorDrawableCompat" />
 </LinearLayout>

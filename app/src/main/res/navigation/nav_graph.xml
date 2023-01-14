@@ -3,34 +3,44 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
+    app:startDestination="@id/ContentMain">
+    <fragment
+        android:id="@+id/ContentMain"
+        android:name="com.example.idioma_quiz.ContentMain"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/content_main">
+
+        <action
+            android:id="@+id/action_ContentMain_to_MainFragment"
+            app:destination="@id/MainFragment" />
+    </fragment>
 
     <fragment
-        android:id="@+id/FirstFragment"
-        android:name="com.example.idioma_quiz.FirstFragment"
+        android:id="@+id/MainFragment"
+        android:name="com.example.idioma_quiz.MainFragment"
         android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first">
+        tools:layout="@layout/main_fragment">
 
         <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
+            android:id="@+id/action_MainFragment_to_SecondFragment"
             app:destination="@id/SecondFragment" />
         <action
-            android:id="@+id/action_FirstFragment_to_quizQuestionActivity"
+            android:id="@+id/action_MainFragment_to_quizQuestionActivity"
             app:destination="@id/quizQuestionActivity" />
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
-        android:name="com.example.idioma_quiz.SecondFragment"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
+        android:name="com.example.idioma_quiz.quizsecond.SecondFragment"
+        android:label="activity_quiz_question"
+        tools:layout="@layout/second_fragment">
 
         <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
+            android:id="@+id/action_SecondFragment_to_MainFragment"
+            app:destination="@id/MainFragment" />
     </fragment>
     <activity
         android:id="@+id/quizQuestionActivity"
-        android:name="com.example.idioma_quiz.QuizQuestionActivity"
+        android:name="com.example.idioma_quiz.quizfirst.QuizQuestionActivity"
         android:label="activity_quiz_question"
         tools:layout="@layout/activity_quiz_question" />
 </navigation>

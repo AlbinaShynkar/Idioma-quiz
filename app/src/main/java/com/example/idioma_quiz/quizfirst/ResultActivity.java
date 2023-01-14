@@ -1,4 +1,4 @@
-package com.example.idioma_quiz;
+package com.example.idioma_quiz.quizfirst;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.example.idioma_quiz.MainActivity;
+import com.example.idioma_quiz.R;
+
+import com.example.idioma_quiz.databinding.ActivityResultBinding;
 
 public class ResultActivity extends AppCompatActivity {
 
@@ -33,5 +38,12 @@ public class ResultActivity extends AppCompatActivity {
             }
         });
 
+        Button btn_home = findViewById(R.id.action_home);
+        btn_home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(intent);
+            }
+        });
     }
 }

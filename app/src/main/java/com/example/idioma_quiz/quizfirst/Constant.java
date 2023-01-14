@@ -1,4 +1,7 @@
-package com.example.idioma_quiz;
+package com.example.idioma_quiz.quizfirst;
+
+import com.example.idioma_quiz.R;
+import com.example.idioma_quiz.quizfirst.Questions;
 
 import java.util.ArrayList;
 
